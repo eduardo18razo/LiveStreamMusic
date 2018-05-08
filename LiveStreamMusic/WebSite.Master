@@ -1,0 +1,127 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="WebSite.master.cs" Inherits="LiveStreamMusic.Web.WebSite" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" style="background: transparent">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel='stylesheet' href="assets/css/font.css" />
+    <link rel="stylesheet" href="assets/css/font-awesome.css" />
+    <link rel="stylesheet" href="assets/css/pe-7-icons.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap-markdown.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/medias.css" />
+    <link rel="stylesheet" href="assets/css/menuStyle.css" />
+    <link rel="stylesheet" href="assets/css/divs.css" />
+    <link rel="stylesheet" href="assets/css/checkBox.css" />
+    <link rel="stylesheet" href="assets/css/fileupload.css" />
+    <%--<link href="css/boostrap/bootstrap.min.css" rel="stylesheet" />
+    
+    <link href="css/Headers.css" rel="stylesheet" />
+    <link href="css/stylemainmenu.css" rel="stylesheet" />
+    <link href="css/DropDown.css" rel="stylesheet" />
+    --%>
+    <link href="css/CustomStyles.css" rel="stylesheet" />
+    <link href="css/Reproductor/player.css" rel="stylesheet" />
+    <link href="css/Reproductor/singlePlayer.css" rel="stylesheet" />
+
+    <script>
+        function MostrarPopup(modalName) {
+            $(modalName).on('shown.bs.modal', function () {
+                $(this).find('[autofocus]').focus();
+            });
+            $(modalName).modal({ backdrop: 'static', keyboard: false });
+            $(modalName).modal({ show: true });
+            return true;
+        };
+        function CierraPopup(modalName) {
+            $(modalName).modal('hide');
+            return true;
+        };
+
+        function AddNewSongtoList(idLista, cancion) {
+            debugger;
+            window.parent.AgregarCancionAlista(idLista, cancion);
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="webSiteHead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background: transparent">
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="scripMain" runat="server" EnablePageMethods="true">
+            <Scripts>
+
+                <asp:ScriptReference Path="~/scripts/JQuery/jquery-2.1.1.min.js" />
+
+                <asp:ScriptReference Path="~/scripts/Boostrap/js/bootstrap.min.js" />
+                <asp:ScriptReference Path="~/assets/js/bootstrap-notify.js" />
+                <asp:ScriptReference Path="~/assets/js/bootstrap-notify.min.js" />
+                <asp:ScriptReference Path="~/assets/js/pmenu.js" />
+                <asp:ScriptReference Path="~/assets/js/modernizr.custom.js" />
+                <asp:ScriptReference Path="~/assets/js/Notificaciones.js" />
+                <asp:ScriptReference Path="~/scripts/Reproductor/singlePlayer.js" />
+                <asp:ScriptReference Path="~/scripts/super-panel.js" />
+            </Scripts>
+        </asp:ScriptManager>
+        <header class="header">
+            <div class="branding ">
+                <h1 class="logo text-center">
+                    <asp:HyperLink NavigateUrl="~/Default.aspx" runat="server">
+                        <asp:Image class="logo-icon" ImageUrl="~/images/logo.jpg" alt="icon" runat="server" Width="170px" Height="65px" />
+                        <asp:Label runat="server" ID="lblBranding" Visible="false" />
+                    </asp:HyperLink>
+                </h1>
+            </div>
+            <div class="topbar bg_w_header">
+                <div runat="server" id="divMenuBtn" class="cont-menu-trigger">
+                    <div>
+                        <span id="trigger" class="menu-trigger z-Index-Top" />
+                    </div>
+                </div>
+            </div>
+
+        </header>
+        <div id="content-wrapper" class="content-wrapper no-padding-top">
+            <div class="container-fluid no-padding-left">
+                <div class="divMainMenu margin-top-65" id="divMainMenu">
+                    <nav id="pMenu" class="pMenu">
+                        <div class="menuLevel">
+                            <h2 class="icon">Biblioteca</h2>
+                            <ul>
+                                <li><a href="Musica.aspx">Biblioteca</a></li>
+                                <li><a href="SolicitarRola.aspx">Pedir Rolas</a></li>
+                                <%--<li><a href="AdministrarListas.aspx">Administrar Listas</a></li>--%>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="scroller" id="scroller">
+                    <div class="no-margin-top heigth100">
+                        <asp:ContentPlaceHolder ID="webSiteContent" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="width: 100%; margin: 0 auto; margin-top: 0%; padding-top: 0%; height: 88%; border: none; position: absolute;">
+        </div>
+        <script>
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+            new mlPushMenu(document.getElementById('pMenu'), document.getElementById('trigger'), {
+                type: 'overlap'
+            });
+            Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler);
+            function BeginRequestHandler(sender, args) {
+                var oControl = args.get_postBackElement();
+                oControl.disabled = true;
+            }
+        </script>
+    </form>
+</body>
+</html>

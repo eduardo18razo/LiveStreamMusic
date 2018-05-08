@@ -1,0 +1,174 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Publico.master.cs" Inherits="LiveStreamMusic.Web.Publico" %>
+
+<%@ Register Src="~/UserControls/UcLogin.ascx" TagPrefix="uc1" TagName="UcLogin" %>
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RazoFy - Toda tu Musica en un solo sitio</title>
+    <link rel="Shortcut Icon" href="favicon.ico" type="image/x-icon" />
+    <link rel='stylesheet' href="assets/css/font.css" />
+    <link rel="stylesheet" href="assets/css/font-awesome.css" />
+    <link rel="stylesheet" href="assets/css/pe-7-icons.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap-markdown.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/medias.css" />
+    <link rel="stylesheet" href="assets/css/menuStyle.css" />
+    <link rel="stylesheet" href="assets/css/divs.css" />
+    <link rel="stylesheet" href="assets/css/checkBox.css" />
+    <link rel="stylesheet" href="assets/css/fileupload.css" />
+    <script type="text/javascript">
+        function MostrarPopup(modalName) {
+            $(modalName).on('shown.bs.modal', function () {
+                $(this).find('[autofocus]').focus();
+            });
+            $(modalName).modal({ backdrop: 'static', keyboard: false });
+            $(modalName).modal('show');
+            return true;
+        };
+
+        function CierraPopup(modalName) {
+            $(modalName).modal('hide');
+            return true;
+        };
+        function CargaEditor(editorName) {
+            $(editorName).markdown();
+        }
+        function OpenWindow(url) {
+            window.open(url, "test", 'type=fullWindow, fullscreen, height=700,width=760');
+        };
+        function search(evt) {
+            if (evt.charCode == 13) {
+                this.__doPostBack('Buscador', 'OnKeyPress');
+                evt.preventDefault();
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        function ShowLanding() {
+            var landing = document.getElementById('updateProgress');
+            if (landing != undefined) {
+                landing.style.display = 'block';
+            }
+        }
+
+        function HideLanding() {
+            var landing = document.getElementById('updateProgress');
+            if (landing != undefined) {
+                landing.style.display = 'none';
+            }
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="bodyBackground">
+    <form runat="server" id="form1" enctype="multipart/form-data" class="bg-grisClaro">
+        <asp:ScriptManager ID="scripMain" runat="server" EnablePageMethods="true">
+            <Scripts>
+                <asp:ScriptReference Path="~/assets/js/jquery.js" />
+                <asp:ScriptReference Path="~/assets/js/bootstrap.js" />
+                <asp:ScriptReference Path="~/assets/js/imagesloaded.js" />
+                <asp:ScriptReference Path="~/assets/js/masonry.js" />
+                <asp:ScriptReference Path="~/assets/js/main.js" />
+                <asp:ScriptReference Path="~/assets/js/modernizr.custom.js" />
+                <asp:ScriptReference Path="~/assets/js/pmenu.js" />
+                <asp:ScriptReference Path="~/assets/js/bootstrap-notify.js" />
+                <asp:ScriptReference Path="~/assets/js/bootstrap-notify.min.js" />
+                <asp:ScriptReference Path="~/assets/js/Notificaciones.js" />
+                <asp:ScriptReference Path="~/assets/tmp/editor/trumbowyg.min.js" />
+                <asp:ScriptReference Path="~/assets/tmp/jquery.tagsinput.min.js" />
+                <asp:ScriptReference Path="~/assets/js/jquery.sumoselect.min.js" />
+                <asp:ScriptReference Path="~/assets/js/validation.js" />
+                <asp:ScriptReference Path="~/assets/js/bootstrap-markdown.js" />
+                <asp:ScriptReference Path="~/assets/js/markdown-js.js" />
+                <asp:ScriptReference Path="~/assets/js/to-markdown.js" />
+            </Scripts>
+        </asp:ScriptManager>
+        <asp:UpdateProgress ID="updateProgress" runat="server" ClientIDMode="Static">
+            <ProgressTemplate>
+                <div class="progressBar">
+                    <asp:Image ID="imgUpdateProgress" runat="server" ImageUrl="~/Images/loading.gif" AlternateText="Loading ..." ToolTip="Loading ..." />
+                </div>
+            </ProgressTemplate>
+        </asp:UpdateProgress>
+        <header class="header">
+            <div class="branding ">
+                <h1 class="logo text-center">
+                    <asp:HyperLink NavigateUrl="~/Default.aspx" runat="server">
+                        <asp:Image class="logo-icon" ImageUrl="~/images/logo.jpg" alt="icon" runat="server" Width="170px" Height="65px" />
+                        <asp:Label runat="server" ID="lblBranding" Visible="false" />
+                    </asp:HyperLink>
+                </h1>
+            </div>
+
+            <div class="topbar bg_w_header">
+                <div class="navbar-tools">
+                    <div class="utilities-container">
+                        <div class="utilities">
+
+                            <div class="item item-messages dropdown">
+                                <div class="dropdown-toggle" id="dropdownMenu-messages" data-toggle="dropdown" aria-expanded="true" role="button">
+                                    <span class="sr-only">Ingresa</span>
+                                    <span class="pe-icon fa fa-sign-in icon" data-toggle="tooltip" data-placement="bottom" title="Ingresa"></span>
+                                </div>
+                                <div class="dropdown-menu wdropdown-login" role="menu" aria-labelledby="dropdownMenu-messages">
+                                    <span class="arrow arrowLogin"></span>
+                                    <div>
+                                        <asp:UpdatePanel runat="server" UpdateMode="Conditional">
+                                            <ContentTemplate>
+                                                <uc1:UcLogin runat="server" ID="ucLogin" />
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="content-wrapper" class="content-wrapper no-padding-top">
+            <div class="container-fluid no-padding-left">
+                <div class="scroller" id="scroller">
+                    <div class="no-margin-top heigth100">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+            new mlPushMenu(document.getElementById('pMenu'), document.getElementById('trigger'), {
+                type: 'overlap'
+            });
+            Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler);
+            function BeginRequestHandler(sender, args) {
+                var oControl = args.get_postBackElement();
+                oControl.disabled = true;
+            }
+        </script>
+    </form>
+    <footer id="footer" class="site-footer">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value="87S8MFGGT9FJ2" />
+            <input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea." />
+            <img alt="" style="border: 0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1" />
+        </form>
+    </footer>
+</body>
+</html>

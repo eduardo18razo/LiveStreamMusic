@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AudioFilesModelStoreContainer" CdmEntityContainer="AudioFilesConn">
+    <EntitySetMapping Name="Album">
+      <EntityTypeMapping TypeName="AudioFilesModel.Album">
+        <MappingFragment StoreEntitySet="Album">
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="IdArtista" ColumnName="IdArtista" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Artista">
+      <EntityTypeMapping TypeName="AudioFilesModel.Artista">
+        <MappingFragment StoreEntitySet="Artista">
+          <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="IdGenero" ColumnName="IdGenero" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BitacoraAcceso">
+      <EntityTypeMapping TypeName="AudioFilesModel.BitacoraAcceso">
+        <MappingFragment StoreEntitySet="BitacoraAcceso">
+          <ScalarProperty Name="Ip" ColumnName="Ip" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cancion">
+      <EntityTypeMapping TypeName="AudioFilesModel.Cancion">
+        <MappingFragment StoreEntitySet="Cancion">
+          <ScalarProperty Name="TieneReporte" ColumnName="TieneReporte" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="ContentType" ColumnName="ContentType" />
+          <ScalarProperty Name="Extension" ColumnName="Extension" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="IdAlbum" ColumnName="IdAlbum" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genero">
+      <EntityTypeMapping TypeName="AudioFilesModel.Genero">
+        <MappingFragment StoreEntitySet="Genero">
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Incidencia">
+      <EntityTypeMapping TypeName="AudioFilesModel.Incidencia">
+        <MappingFragment StoreEntitySet="Incidencia">
+          <ScalarProperty Name="Revisado" ColumnName="Revisado" />
+          <ScalarProperty Name="FechaIncidencia" ColumnName="FechaIncidencia" />
+          <ScalarProperty Name="NombreCancionSugerido" ColumnName="NombreCancionSugerido" />
+          <ScalarProperty Name="IdAlbumSugerido" ColumnName="IdAlbumSugerido" />
+          <ScalarProperty Name="IdArtistaSugerido" ColumnName="IdArtistaSugerido" />
+          <ScalarProperty Name="IdGeneroSugerido" ColumnName="IdGeneroSugerido" />
+          <ScalarProperty Name="IdCancion" ColumnName="IdCancion" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="IdTipoIncidencia" ColumnName="IdTipoIncidencia" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ParametroCorreo">
+      <EntityTypeMapping TypeName="AudioFilesModel.ParametroCorreo">
+        <MappingFragment StoreEntitySet="ParametroCorreo">
+          <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+          <ScalarProperty Name="Predefinido" ColumnName="Predefinido" />
+          <ScalarProperty Name="Contenido" ColumnName="Contenido" />
+          <ScalarProperty Name="IdTipoCorreo" ColumnName="IdTipoCorreo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sugerencia">
+      <EntityTypeMapping TypeName="AudioFilesModel.Sugerencia">
+        <MappingFragment StoreEntitySet="Sugerencia">
+          <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+          <ScalarProperty Name="Cancion" ColumnName="Cancion" />
+          <ScalarProperty Name="Album" ColumnName="Album" />
+          <ScalarProperty Name="Artista" ColumnName="Artista" />
+          <ScalarProperty Name="Genero" ColumnName="Genero" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoCorreo">
+      <EntityTypeMapping TypeName="AudioFilesModel.TipoCorreo">
+        <MappingFragment StoreEntitySet="TipoCorreo">
+          <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoIncidencia">
+      <EntityTypeMapping TypeName="AudioFilesModel.TipoIncidencia">
+        <MappingFragment StoreEntitySet="TipoIncidencia">
+          <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoLink">
+      <EntityTypeMapping TypeName="AudioFilesModel.TipoLink">
+        <MappingFragment StoreEntitySet="TipoLink">
+          <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioLinkPassword">
+      <EntityTypeMapping TypeName="AudioFilesModel.UsuarioLinkPassword">
+        <MappingFragment StoreEntitySet="UsuarioLinkPassword">
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="IdTipoLink" ColumnName="IdTipoLink" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Visita">
+      <EntityTypeMapping TypeName="AudioFilesModel.Visita">
+        <MappingFragment StoreEntitySet="Visita">
+          <ScalarProperty Name="Veces" ColumnName="Veces" />
+          <ScalarProperty Name="Ip" ColumnName="Ip" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ListaReproduccion">
+      <EntityTypeMapping TypeName="AudioFilesModel.ListaReproduccion">
+        <MappingFragment StoreEntitySet="ListaReproduccion">
+          <ScalarProperty Name="Habilitada" ColumnName="Habilitada" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ListaReproduccionDetalle">
+      <EntityTypeMapping TypeName="AudioFilesModel.ListaReproduccionDetalle">
+        <MappingFragment StoreEntitySet="ListaReproduccionDetalle">
+          <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+          <ScalarProperty Name="IdCancion" ColumnName="IdCancion" />
+          <ScalarProperty Name="IdListaReproduccion" ColumnName="IdListaReproduccion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="AudioFilesModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+          <ScalarProperty Name="Confirmado" ColumnName="Confirmado" />
+          <ScalarProperty Name="FechaConfirmacion" ColumnName="FechaConfirmacion" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="PwdDes" ColumnName="PwdDes" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

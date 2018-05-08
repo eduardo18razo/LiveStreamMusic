@@ -1,0 +1,16 @@
+C:\Users\King Lizard\Documents\LiveStreamMusic\LiveStreamMusic.Data\bin\Debug\LiveStreamMusic.Data.dll.config
+C:\Users\King Lizard\Documents\LiveStreamMusic\LiveStreamMusic.Data\bin\Debug\LiveStreamMusic.Data.dll
+C:\Users\King Lizard\Documents\LiveStreamMusic\LiveStreamMusic.Data\bin\Debug\LiveStreamMusic.Data.pdb
+C:\Users\King Lizard\Documents\LiveStreamMusic\LiveStreamMusic.Data\bin\Debug\LiveStreamMusic.Entities.dll
+C:\Users\King Lizard\Documents\LiveStreamMusic\LiveStreamMusic.Data\bin\Debug\LiveStreamMusic.Entities.pdb
+C:\Users\King Lizard\Documents\LiveStreamMusic\LiveStreamMusic.Data\obj\Debug\LiveStreamMusic.Data.csprojResolveAssemblyReference.cache
+C:\Users\King Lizard\Documents\LiveStreamMusic\LiveStreamMusic.Data\obj\Debug\LiveStreamMusic.Data.dll
+C:\Users\King Lizard\Documents\LiveStreamMusic\LiveStreamMusic.Data\obj\Debug\LiveStreamMusic.Data.pdb
+C:\Users\Eduardo Cerritos\Desktop\Eduardo\Projects\LiveStreamMusic\LiveStreamMusic.Data\obj\Debug\LiveStreamMusic.Data.csprojResolveAssemblyReference.cache
+C:\Users\Eduardo Cerritos\Desktop\Eduardo\Projects\LiveStreamMusic\LiveStreamMusic.Data\obj\Debug\LiveStreamMusic.Data.dll
+C:\Users\Eduardo Cerritos\Desktop\Eduardo\Projects\LiveStreamMusic\LiveStreamMusic.Data\obj\Debug\LiveStreamMusic.Data.pdb
+C:\Users\Eduardo Cerritos\Desktop\Eduardo\Projects\LiveStreamMusic\LiveStreamMusic.Data\bin\Debug\LiveStreamMusic.Data.dll.config
+C:\Users\Eduardo Cerritos\Desktop\Eduardo\Projects\LiveStreamMusic\LiveStreamMusic.Data\bin\Debug\LiveStreamMusic.Data.dll
+C:\Users\Eduardo Cerritos\Desktop\Eduardo\Projects\LiveStreamMusic\LiveStreamMusic.Data\bin\Debug\LiveStreamMusic.Data.pdb
+C:\Users\Eduardo Cerritos\Desktop\Eduardo\Projects\LiveStreamMusic\LiveStreamMusic.Data\bin\Debug\LiveStreamMusic.Entities.dll
+C:\Users\Eduardo Cerritos\Desktop\Eduardo\Projects\LiveStreamMusic\LiveStreamMusic.Data\bin\Debug\LiveStreamMusic.Entities.pdb

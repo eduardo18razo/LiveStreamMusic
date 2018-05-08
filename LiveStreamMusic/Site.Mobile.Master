@@ -1,0 +1,119 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Mobile.master.cs" Inherits="LiveStreamMusic.Web.SiteMobile" %>
+<<%@ Register Src="~/UserControls/UcLogin.ascx" TagPrefix="uc1" TagName="UcLogin" %>
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title><%: Page.Title %> - Toda tu Musica en un solo sitio</title>
+    <link href="css/boostrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/CustomStyles.css" rel="stylesheet" />
+    <script type="text/javascript">
+        function MostrarPopup(modalName) {
+            $(modalName).on('shown.bs.modal', function () {
+                $(this).find('[autofocus]').focus();
+            });
+            $(modalName).modal({ backdrop: 'static', keyboard: false });
+            $(modalName).modal({ show: true });
+            return true;
+        };
+        function CierraPopup(modalName) {
+            $(modalName).modal('hide');
+            return true;
+        };
+        //function ValidaCorreo(obj) {
+        //    debugger;
+        //    obj = $(obj);
+        //    var params = "{correo:'" + obj.val() + "'}";
+        //    $.ajax({
+
+        //        type: 'POST',
+        //        url: '/Users/WebMethods.aspx/CorreoValido',
+        //        data: params,
+        //        contentType: 'application/json; charset=utf-8',
+        //        dataType: 'json',
+        //        success: OnSuccessMail
+        //    });
+        //}
+
+        //function OnSuccessMail(response) {
+        //    if (!response.d)
+        //    {
+        //        alert('Correo Invalido')
+        //    }
+        //}
+
+    </script>
+    <style>
+        .clear-fix:after {
+            content: ".";
+            clear: both;
+            display: block;
+            height: 0;
+            visibility: hidden;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="headMobile" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background: url('/Images/background.jpg') repeat-y; -ms-background-size: cover; background-size: cover; background-attachment: fixed; -moz-min-width: 750px; -ms-min-width: 750px; -o-min-width: 750px; -webkit-min-width: 750px; min-width: 750px; min-height: 640px">
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server" EnablePageMethods="true">
+            <Scripts>
+                <asp:ScriptReference Path="~/scripts/JQuery/jquery-2.1.1.min.js" />
+                <asp:ScriptReference Path="~/scripts/Boostrap/js/bootstrap.min.js" />
+                <asp:ScriptReference Path="~/scripts/Reproductor/player.js" />
+            </Scripts>
+        </asp:ScriptManager>
+        <div class="navbar navbar-inverse navbar-fixed-top" style="height: 7%">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">Streaming Audio</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/">Inicio</a></li>
+                    </ul>
+                    <div class="navbar-form navbar-right">
+                        <span id="top-nav" style="position: absolute; margin: 12px 0 0 12px; top: 0; right: 5%">
+                            <a class="btn btn-sm btn-success" style="margin-left: 10px; margin-right: 10px" onclick="MostrarPopup('#modalSingIn');">Iniciar Sesión</a>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <asp:HiddenField runat="server" ID="hfIpCliente" />
+        <div style="width: 100%; margin: 0 auto; margin-top: 15%; padding-top: 0; height: 88%; border: none; position: absolute;">
+            <asp:ContentPlaceHolder ID="MainContentMobile" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="modal fade" id="modalSingIn" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+            <asp:UpdatePanel ID="upModalSingIn" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <uc1:UcLogin runat="server" ID="ucLogin" />
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+    </form>
+    <footer class="navbar navbar-inverse navbar-fixed-bottom" style="height: 8%; text-align: center">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value="87S8MFGGT9FJ2" />
+            <input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea." />
+            <img alt="" style="border: 0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1" />
+        </form>
+    </footer>
+</body>
+</html>

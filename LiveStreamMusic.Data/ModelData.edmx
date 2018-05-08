@@ -1,0 +1,1164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AudioFilesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="Album">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdArtista" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Artista">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdGenero" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar(max)" />
+          <Property Name="Habilitado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BitacoraAcceso">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdUsuario" Type="int" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="Ip" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Cancion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdAlbum" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar(max)" />
+          <Property Name="Extension" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="ContentType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FilePath" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Data" Type="varbinary(max)" />
+          <Property Name="TieneReporte" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Genero">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Incidencia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdTipoIncidencia" Type="int" />
+          <Property Name="IdUsuario" Type="int" />
+          <Property Name="IdCancion" Type="int" />
+          <Property Name="IdGeneroSugerido" Type="int" />
+          <Property Name="IdArtistaSugerido" Type="int" />
+          <Property Name="IdAlbumSugerido" Type="int" />
+          <Property Name="NombreCancionSugerido" Type="nvarchar(max)" />
+          <Property Name="FechaIncidencia" Type="datetime" />
+          <Property Name="Revisado" Type="bit" />
+        </EntityType>
+        <EntityType Name="ListaReproduccion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdUsuario" Type="int" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="150" />
+          <Property Name="Habilitada" Type="bit" />
+        </EntityType>
+        <EntityType Name="ListaReproduccionDetalle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdListaReproduccion" Type="int" Nullable="false" />
+          <Property Name="IdCancion" Type="int" Nullable="false" />
+          <Property Name="Habilitado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ParametroCorreo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdTipoCorreo" Type="int" Nullable="false" />
+          <Property Name="Contenido" Type="ntext" Nullable="false" />
+          <Property Name="Predefinido" Type="bit" Nullable="false" />
+          <Property Name="Habilitado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sugerencia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdUsuario" Type="int" Nullable="false" />
+          <Property Name="Genero" Type="nvarchar(max)" />
+          <Property Name="Artista" Type="nvarchar(max)" />
+          <Property Name="Album" Type="nvarchar(max)" />
+          <Property Name="Cancion" Type="nvarchar(max)" />
+          <Property Name="Comentarios" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TipoCorreo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Habilitado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoIncidencia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="150" />
+          <Property Name="Habilitado" Type="bit" />
+        </EntityType>
+        <EntityType Name="TipoLink">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Habilitado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Apellido" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Correo" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="20" />
+          <Property Name="FechaNacimiento" Type="datetime" Nullable="false" />
+          <Property Name="Pwd" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PwdDes" Type="nvarchar(max)" />
+          <Property Name="Sexo" Type="bit" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" />
+          <Property Name="FechaConfirmacion" Type="datetime" />
+          <Property Name="Confirmado" Type="bit" />
+          <Property Name="Habilitado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsuarioLinkPassword">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdTipoLink" Type="int" Nullable="false" />
+          <Property Name="IdUsuario" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="Link" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Codigo" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Visita">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ip" Type="nvarchar" MaxLength="50" />
+          <Property Name="Veces" Type="bigint" />
+        </EntityType>
+        <Association Name="FK_Album_Artista1">
+          <End Role="Artista" Type="Self.Artista" Multiplicity="1" />
+          <End Role="Album" Type="Self.Album" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artista">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Album">
+              <PropertyRef Name="IdArtista" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Artista_Genero">
+          <End Role="Genero" Type="Self.Genero" Multiplicity="1" />
+          <End Role="Artista" Type="Self.Artista" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genero">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Artista">
+              <PropertyRef Name="IdGenero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BitacoraAcceso_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="BitacoraAcceso" Type="Self.BitacoraAcceso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BitacoraAcceso">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cancion_Album">
+          <End Role="Album" Type="Self.Album" Multiplicity="1" />
+          <End Role="Cancion" Type="Self.Cancion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Album">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cancion">
+              <PropertyRef Name="IdAlbum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Incidencia_Album">
+          <End Role="Album" Type="Self.Album" Multiplicity="0..1" />
+          <End Role="Incidencia" Type="Self.Incidencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Album">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidencia">
+              <PropertyRef Name="IdAlbumSugerido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Incidencia_Artista">
+          <End Role="Artista" Type="Self.Artista" Multiplicity="0..1" />
+          <End Role="Incidencia" Type="Self.Incidencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artista">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidencia">
+              <PropertyRef Name="IdArtistaSugerido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Incidencia_Cancion">
+          <End Role="Cancion" Type="Self.Cancion" Multiplicity="0..1" />
+          <End Role="Incidencia" Type="Self.Incidencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cancion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidencia">
+              <PropertyRef Name="IdCancion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Incidencia_Genero">
+          <End Role="Genero" Type="Self.Genero" Multiplicity="0..1" />
+          <End Role="Incidencia" Type="Self.Incidencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genero">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidencia">
+              <PropertyRef Name="IdGeneroSugerido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Incidencia_TipoIncidencia">
+          <End Role="TipoIncidencia" Type="Self.TipoIncidencia" Multiplicity="0..1" />
+          <End Role="Incidencia" Type="Self.Incidencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoIncidencia">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidencia">
+              <PropertyRef Name="IdTipoIncidencia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ListaReproduccion_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="ListaReproduccion" Type="Self.ListaReproduccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ListaReproduccion">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ListaReproduccionDetalle_Cancion">
+          <End Role="Cancion" Type="Self.Cancion" Multiplicity="1" />
+          <End Role="ListaReproduccionDetalle" Type="Self.ListaReproduccionDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cancion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ListaReproduccionDetalle">
+              <PropertyRef Name="IdCancion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ListaReproduccionDetalle_ListaReproduccion">
+          <End Role="ListaReproduccion" Type="Self.ListaReproduccion" Multiplicity="1" />
+          <End Role="ListaReproduccionDetalle" Type="Self.ListaReproduccionDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ListaReproduccion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ListaReproduccionDetalle">
+              <PropertyRef Name="IdListaReproduccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ParametroCorreo_TipoCorreo">
+          <End Role="TipoCorreo" Type="Self.TipoCorreo" Multiplicity="1" />
+          <End Role="ParametroCorreo" Type="Self.ParametroCorreo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoCorreo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ParametroCorreo">
+              <PropertyRef Name="IdTipoCorreo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sugerencia_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Sugerencia" Type="Self.Sugerencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Sugerencia">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioLinkPassword_TipoLink">
+          <End Role="TipoLink" Type="Self.TipoLink" Multiplicity="1" />
+          <End Role="UsuarioLinkPassword" Type="Self.UsuarioLinkPassword" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoLink">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UsuarioLinkPassword">
+              <PropertyRef Name="IdTipoLink" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioLinkPassword_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="UsuarioLinkPassword" Type="Self.UsuarioLinkPassword" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UsuarioLinkPassword">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AudioFilesModelStoreContainer">
+          <EntitySet Name="Album" EntityType="Self.Album" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Artista" EntityType="Self.Artista" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BitacoraAcceso" EntityType="Self.BitacoraAcceso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cancion" EntityType="Self.Cancion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Genero" EntityType="Self.Genero" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Incidencia" EntityType="Self.Incidencia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ListaReproduccion" EntityType="Self.ListaReproduccion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ListaReproduccionDetalle" EntityType="Self.ListaReproduccionDetalle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ParametroCorreo" EntityType="Self.ParametroCorreo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sugerencia" EntityType="Self.Sugerencia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoCorreo" EntityType="Self.TipoCorreo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoIncidencia" EntityType="Self.TipoIncidencia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoLink" EntityType="Self.TipoLink" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsuarioLinkPassword" EntityType="Self.UsuarioLinkPassword" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Visita" EntityType="Self.Visita" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Album_Artista1" Association="Self.FK_Album_Artista1">
+            <End Role="Artista" EntitySet="Artista" />
+            <End Role="Album" EntitySet="Album" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Artista_Genero" Association="Self.FK_Artista_Genero">
+            <End Role="Genero" EntitySet="Genero" />
+            <End Role="Artista" EntitySet="Artista" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BitacoraAcceso_Usuario" Association="Self.FK_BitacoraAcceso_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="BitacoraAcceso" EntitySet="BitacoraAcceso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cancion_Album" Association="Self.FK_Cancion_Album">
+            <End Role="Album" EntitySet="Album" />
+            <End Role="Cancion" EntitySet="Cancion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Incidencia_Album" Association="Self.FK_Incidencia_Album">
+            <End Role="Album" EntitySet="Album" />
+            <End Role="Incidencia" EntitySet="Incidencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Incidencia_Artista" Association="Self.FK_Incidencia_Artista">
+            <End Role="Artista" EntitySet="Artista" />
+            <End Role="Incidencia" EntitySet="Incidencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Incidencia_Cancion" Association="Self.FK_Incidencia_Cancion">
+            <End Role="Cancion" EntitySet="Cancion" />
+            <End Role="Incidencia" EntitySet="Incidencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Incidencia_Genero" Association="Self.FK_Incidencia_Genero">
+            <End Role="Genero" EntitySet="Genero" />
+            <End Role="Incidencia" EntitySet="Incidencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Incidencia_TipoIncidencia" Association="Self.FK_Incidencia_TipoIncidencia">
+            <End Role="TipoIncidencia" EntitySet="TipoIncidencia" />
+            <End Role="Incidencia" EntitySet="Incidencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ListaReproduccion_Usuario" Association="Self.FK_ListaReproduccion_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="ListaReproduccion" EntitySet="ListaReproduccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ListaReproduccionDetalle_Cancion" Association="Self.FK_ListaReproduccionDetalle_Cancion">
+            <End Role="Cancion" EntitySet="Cancion" />
+            <End Role="ListaReproduccionDetalle" EntitySet="ListaReproduccionDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ListaReproduccionDetalle_ListaReproduccion" Association="Self.FK_ListaReproduccionDetalle_ListaReproduccion">
+            <End Role="ListaReproduccion" EntitySet="ListaReproduccion" />
+            <End Role="ListaReproduccionDetalle" EntitySet="ListaReproduccionDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ParametroCorreo_TipoCorreo" Association="Self.FK_ParametroCorreo_TipoCorreo">
+            <End Role="TipoCorreo" EntitySet="TipoCorreo" />
+            <End Role="ParametroCorreo" EntitySet="ParametroCorreo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sugerencia_Usuario" Association="Self.FK_Sugerencia_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Sugerencia" EntitySet="Sugerencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioLinkPassword_TipoLink" Association="Self.FK_UsuarioLinkPassword_TipoLink">
+            <End Role="TipoLink" EntitySet="TipoLink" />
+            <End Role="UsuarioLinkPassword" EntitySet="UsuarioLinkPassword" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioLinkPassword_Usuario" Association="Self.FK_UsuarioLinkPassword_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="UsuarioLinkPassword" EntitySet="UsuarioLinkPassword" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AudioFilesModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="AudioFilesConn" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Album" EntityType="AudioFilesModel.Album" />
+          <EntitySet Name="Artista" EntityType="AudioFilesModel.Artista" />
+          <EntitySet Name="BitacoraAcceso" EntityType="AudioFilesModel.BitacoraAcceso" />
+          <EntitySet Name="Cancion" EntityType="AudioFilesModel.Cancion" />
+          <EntitySet Name="Genero" EntityType="AudioFilesModel.Genero" />
+          <EntitySet Name="Incidencia" EntityType="AudioFilesModel.Incidencia" />
+          <EntitySet Name="ParametroCorreo" EntityType="AudioFilesModel.ParametroCorreo" />
+          <EntitySet Name="Sugerencia" EntityType="AudioFilesModel.Sugerencia" />
+          <EntitySet Name="TipoCorreo" EntityType="AudioFilesModel.TipoCorreo" />
+          <EntitySet Name="TipoIncidencia" EntityType="AudioFilesModel.TipoIncidencia" />
+          <EntitySet Name="TipoLink" EntityType="AudioFilesModel.TipoLink" />
+          <EntitySet Name="UsuarioLinkPassword" EntityType="AudioFilesModel.UsuarioLinkPassword" />
+          <EntitySet Name="Visita" EntityType="AudioFilesModel.Visita" />
+          <AssociationSet Name="FK_Album_Artista1" Association="AudioFilesModel.FK_Album_Artista1">
+            <End Role="Artista" EntitySet="Artista" />
+            <End Role="Album" EntitySet="Album" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cancion_Album" Association="AudioFilesModel.FK_Cancion_Album">
+            <End Role="Album" EntitySet="Album" />
+            <End Role="Cancion" EntitySet="Cancion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Incidencia_Album" Association="AudioFilesModel.FK_Incidencia_Album">
+            <End Role="Album" EntitySet="Album" />
+            <End Role="Incidencia" EntitySet="Incidencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Artista_Genero" Association="AudioFilesModel.FK_Artista_Genero">
+            <End Role="Genero" EntitySet="Genero" />
+            <End Role="Artista" EntitySet="Artista" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Incidencia_Artista" Association="AudioFilesModel.FK_Incidencia_Artista">
+            <End Role="Artista" EntitySet="Artista" />
+            <End Role="Incidencia" EntitySet="Incidencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Incidencia_Cancion" Association="AudioFilesModel.FK_Incidencia_Cancion">
+            <End Role="Cancion" EntitySet="Cancion" />
+            <End Role="Incidencia" EntitySet="Incidencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Incidencia_Genero" Association="AudioFilesModel.FK_Incidencia_Genero">
+            <End Role="Genero" EntitySet="Genero" />
+            <End Role="Incidencia" EntitySet="Incidencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Incidencia_TipoIncidencia" Association="AudioFilesModel.FK_Incidencia_TipoIncidencia">
+            <End Role="TipoIncidencia" EntitySet="TipoIncidencia" />
+            <End Role="Incidencia" EntitySet="Incidencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ParametroCorreo_TipoCorreo" Association="AudioFilesModel.FK_ParametroCorreo_TipoCorreo">
+            <End Role="TipoCorreo" EntitySet="TipoCorreo" />
+            <End Role="ParametroCorreo" EntitySet="ParametroCorreo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioLinkPassword_TipoLink" Association="AudioFilesModel.FK_UsuarioLinkPassword_TipoLink">
+            <End Role="TipoLink" EntitySet="TipoLink" />
+            <End Role="UsuarioLinkPassword" EntitySet="UsuarioLinkPassword" />
+          </AssociationSet>
+          <EntitySet Name="ListaReproduccion" EntityType="AudioFilesModel.ListaReproduccion" />
+          <EntitySet Name="ListaReproduccionDetalle" EntityType="AudioFilesModel.ListaReproduccionDetalle" />
+          <AssociationSet Name="FK_ListaReproduccionDetalle_Cancion" Association="AudioFilesModel.FK_ListaReproduccionDetalle_Cancion">
+            <End Role="Cancion" EntitySet="Cancion" />
+            <End Role="ListaReproduccionDetalle" EntitySet="ListaReproduccionDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ListaReproduccionDetalle_ListaReproduccion" Association="AudioFilesModel.FK_ListaReproduccionDetalle_ListaReproduccion">
+            <End Role="ListaReproduccion" EntitySet="ListaReproduccion" />
+            <End Role="ListaReproduccionDetalle" EntitySet="ListaReproduccionDetalle" />
+          </AssociationSet>
+          <EntitySet Name="Usuario" EntityType="AudioFilesModel.Usuario" />
+          <AssociationSet Name="FK_BitacoraAcceso_Usuario" Association="AudioFilesModel.FK_BitacoraAcceso_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="BitacoraAcceso" EntitySet="BitacoraAcceso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ListaReproduccion_Usuario" Association="AudioFilesModel.FK_ListaReproduccion_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="ListaReproduccion" EntitySet="ListaReproduccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sugerencia_Usuario" Association="AudioFilesModel.FK_Sugerencia_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Sugerencia" EntitySet="Sugerencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioLinkPassword_Usuario" Association="AudioFilesModel.FK_UsuarioLinkPassword_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="UsuarioLinkPassword" EntitySet="UsuarioLinkPassword" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Album">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdArtista" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Artista" Relationship="AudioFilesModel.FK_Album_Artista1" FromRole="Album" ToRole="Artista" />
+          <NavigationProperty Name="Cancion" Relationship="AudioFilesModel.FK_Cancion_Album" FromRole="Album" ToRole="Cancion" />
+          <NavigationProperty Name="Incidencia" Relationship="AudioFilesModel.FK_Incidencia_Album" FromRole="Album" ToRole="Incidencia" />
+        </EntityType>
+        <EntityType Name="Artista">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdGenero" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Habilitado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Album" Relationship="AudioFilesModel.FK_Album_Artista1" FromRole="Artista" ToRole="Album" />
+          <NavigationProperty Name="Genero" Relationship="AudioFilesModel.FK_Artista_Genero" FromRole="Artista" ToRole="Genero" />
+          <NavigationProperty Name="Incidencia" Relationship="AudioFilesModel.FK_Incidencia_Artista" FromRole="Artista" ToRole="Incidencia" />
+        </EntityType>
+        <EntityType Name="BitacoraAcceso">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdUsuario" Type="Int32" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Usuario" Relationship="AudioFilesModel.FK_BitacoraAcceso_Usuario" FromRole="BitacoraAcceso" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Cancion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdAlbum" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Extension" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="ContentType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FilePath" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Data" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="TieneReporte" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Album" Relationship="AudioFilesModel.FK_Cancion_Album" FromRole="Cancion" ToRole="Album" />
+          <NavigationProperty Name="Incidencia" Relationship="AudioFilesModel.FK_Incidencia_Cancion" FromRole="Cancion" ToRole="Incidencia" />
+          <NavigationProperty Name="ListaReproduccionDetalle" Relationship="AudioFilesModel.FK_ListaReproduccionDetalle_Cancion" FromRole="Cancion" ToRole="ListaReproduccionDetalle" />
+        </EntityType>
+        <EntityType Name="Genero">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Artista" Relationship="AudioFilesModel.FK_Artista_Genero" FromRole="Genero" ToRole="Artista" />
+          <NavigationProperty Name="Incidencia" Relationship="AudioFilesModel.FK_Incidencia_Genero" FromRole="Genero" ToRole="Incidencia" />
+        </EntityType>
+        <EntityType Name="Incidencia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdTipoIncidencia" Type="Int32" />
+          <Property Name="IdUsuario" Type="Int32" />
+          <Property Name="IdCancion" Type="Int32" />
+          <Property Name="IdGeneroSugerido" Type="Int32" />
+          <Property Name="IdArtistaSugerido" Type="Int32" />
+          <Property Name="IdAlbumSugerido" Type="Int32" />
+          <Property Name="NombreCancionSugerido" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FechaIncidencia" Type="DateTime" Precision="3" />
+          <Property Name="Revisado" Type="Boolean" />
+          <NavigationProperty Name="Album" Relationship="AudioFilesModel.FK_Incidencia_Album" FromRole="Incidencia" ToRole="Album" />
+          <NavigationProperty Name="Artista" Relationship="AudioFilesModel.FK_Incidencia_Artista" FromRole="Incidencia" ToRole="Artista" />
+          <NavigationProperty Name="Cancion" Relationship="AudioFilesModel.FK_Incidencia_Cancion" FromRole="Incidencia" ToRole="Cancion" />
+          <NavigationProperty Name="Genero" Relationship="AudioFilesModel.FK_Incidencia_Genero" FromRole="Incidencia" ToRole="Genero" />
+          <NavigationProperty Name="TipoIncidencia" Relationship="AudioFilesModel.FK_Incidencia_TipoIncidencia" FromRole="Incidencia" ToRole="TipoIncidencia" />
+        </EntityType>
+        <EntityType Name="ParametroCorreo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdTipoCorreo" Type="Int32" Nullable="false" />
+          <Property Name="Contenido" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Predefinido" Type="Boolean" Nullable="false" />
+          <Property Name="Habilitado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="TipoCorreo" Relationship="AudioFilesModel.FK_ParametroCorreo_TipoCorreo" FromRole="ParametroCorreo" ToRole="TipoCorreo" />
+        </EntityType>
+        <EntityType Name="Sugerencia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" />
+          <Property Name="Genero" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Artista" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Album" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Cancion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comentarios" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Usuario" Relationship="AudioFilesModel.FK_Sugerencia_Usuario" FromRole="Sugerencia" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="TipoCorreo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Habilitado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ParametroCorreo" Relationship="AudioFilesModel.FK_ParametroCorreo_TipoCorreo" FromRole="TipoCorreo" ToRole="ParametroCorreo" />
+        </EntityType>
+        <EntityType Name="TipoIncidencia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Habilitado" Type="Boolean" />
+          <NavigationProperty Name="Incidencia" Relationship="AudioFilesModel.FK_Incidencia_TipoIncidencia" FromRole="TipoIncidencia" ToRole="Incidencia" />
+        </EntityType>
+        <EntityType Name="TipoLink">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Habilitado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="UsuarioLinkPassword" Relationship="AudioFilesModel.FK_UsuarioLinkPassword_TipoLink" FromRole="TipoLink" ToRole="UsuarioLinkPassword" />
+        </EntityType>
+        <EntityType Name="UsuarioLinkPassword">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdTipoLink" Type="Int32" Nullable="false" />
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Link" Type="Guid" Nullable="false" />
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="TipoLink" Relationship="AudioFilesModel.FK_UsuarioLinkPassword_TipoLink" FromRole="UsuarioLinkPassword" ToRole="TipoLink" />
+          <NavigationProperty Name="Usuario" Relationship="AudioFilesModel.FK_UsuarioLinkPassword_Usuario" FromRole="UsuarioLinkPassword" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Visita">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Veces" Type="Int64" />
+        </EntityType>
+        <Association Name="FK_Album_Artista1">
+          <End Type="AudioFilesModel.Artista" Role="Artista" Multiplicity="1" />
+          <End Type="AudioFilesModel.Album" Role="Album" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artista">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Album">
+              <PropertyRef Name="IdArtista" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cancion_Album">
+          <End Type="AudioFilesModel.Album" Role="Album" Multiplicity="1" />
+          <End Type="AudioFilesModel.Cancion" Role="Cancion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Album">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cancion">
+              <PropertyRef Name="IdAlbum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Incidencia_Album">
+          <End Type="AudioFilesModel.Album" Role="Album" Multiplicity="0..1" />
+          <End Type="AudioFilesModel.Incidencia" Role="Incidencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Album">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidencia">
+              <PropertyRef Name="IdAlbumSugerido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Artista_Genero">
+          <End Type="AudioFilesModel.Genero" Role="Genero" Multiplicity="1" />
+          <End Type="AudioFilesModel.Artista" Role="Artista" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genero">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Artista">
+              <PropertyRef Name="IdGenero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Incidencia_Artista">
+          <End Type="AudioFilesModel.Artista" Role="Artista" Multiplicity="0..1" />
+          <End Type="AudioFilesModel.Incidencia" Role="Incidencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artista">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidencia">
+              <PropertyRef Name="IdArtistaSugerido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Incidencia_Cancion">
+          <End Type="AudioFilesModel.Cancion" Role="Cancion" Multiplicity="0..1" />
+          <End Type="AudioFilesModel.Incidencia" Role="Incidencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cancion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidencia">
+              <PropertyRef Name="IdCancion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Incidencia_Genero">
+          <End Type="AudioFilesModel.Genero" Role="Genero" Multiplicity="0..1" />
+          <End Type="AudioFilesModel.Incidencia" Role="Incidencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genero">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidencia">
+              <PropertyRef Name="IdGeneroSugerido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Incidencia_TipoIncidencia">
+          <End Type="AudioFilesModel.TipoIncidencia" Role="TipoIncidencia" Multiplicity="0..1" />
+          <End Type="AudioFilesModel.Incidencia" Role="Incidencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoIncidencia">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidencia">
+              <PropertyRef Name="IdTipoIncidencia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ParametroCorreo_TipoCorreo">
+          <End Type="AudioFilesModel.TipoCorreo" Role="TipoCorreo" Multiplicity="1" />
+          <End Type="AudioFilesModel.ParametroCorreo" Role="ParametroCorreo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoCorreo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ParametroCorreo">
+              <PropertyRef Name="IdTipoCorreo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioLinkPassword_TipoLink">
+          <End Type="AudioFilesModel.TipoLink" Role="TipoLink" Multiplicity="1" />
+          <End Type="AudioFilesModel.UsuarioLinkPassword" Role="UsuarioLinkPassword" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoLink">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UsuarioLinkPassword">
+              <PropertyRef Name="IdTipoLink" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ListaReproduccion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdUsuario" Type="Int32" />
+          <Property Name="Descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Habilitada" Type="Boolean" />
+          <NavigationProperty Name="ListaReproduccionDetalle" Relationship="AudioFilesModel.FK_ListaReproduccionDetalle_ListaReproduccion" FromRole="ListaReproduccion" ToRole="ListaReproduccionDetalle" />
+          <NavigationProperty Name="Usuario" Relationship="AudioFilesModel.FK_ListaReproduccion_Usuario" FromRole="ListaReproduccion" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="ListaReproduccionDetalle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdListaReproduccion" Type="Int32" Nullable="false" />
+          <Property Name="IdCancion" Type="Int32" Nullable="false" />
+          <Property Name="Habilitado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Cancion" Relationship="AudioFilesModel.FK_ListaReproduccionDetalle_Cancion" FromRole="ListaReproduccionDetalle" ToRole="Cancion" />
+          <NavigationProperty Name="ListaReproduccion" Relationship="AudioFilesModel.FK_ListaReproduccionDetalle_ListaReproduccion" FromRole="ListaReproduccionDetalle" ToRole="ListaReproduccion" />
+        </EntityType>
+        <Association Name="FK_ListaReproduccionDetalle_Cancion">
+          <End Type="AudioFilesModel.Cancion" Role="Cancion" Multiplicity="1" />
+          <End Type="AudioFilesModel.ListaReproduccionDetalle" Role="ListaReproduccionDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cancion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ListaReproduccionDetalle">
+              <PropertyRef Name="IdCancion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ListaReproduccionDetalle_ListaReproduccion">
+          <End Type="AudioFilesModel.ListaReproduccion" Role="ListaReproduccion" Multiplicity="1" />
+          <End Type="AudioFilesModel.ListaReproduccionDetalle" Role="ListaReproduccionDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ListaReproduccion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ListaReproduccionDetalle">
+              <PropertyRef Name="IdListaReproduccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Apellido" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Correo" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Pwd" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PwdDes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Sexo" Type="Boolean" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Precision="3" />
+          <Property Name="FechaConfirmacion" Type="DateTime" Precision="3" />
+          <Property Name="Confirmado" Type="Boolean" />
+          <Property Name="Habilitado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="BitacoraAcceso" Relationship="AudioFilesModel.FK_BitacoraAcceso_Usuario" FromRole="Usuario" ToRole="BitacoraAcceso" />
+          <NavigationProperty Name="ListaReproduccion" Relationship="AudioFilesModel.FK_ListaReproduccion_Usuario" FromRole="Usuario" ToRole="ListaReproduccion" />
+          <NavigationProperty Name="Sugerencia" Relationship="AudioFilesModel.FK_Sugerencia_Usuario" FromRole="Usuario" ToRole="Sugerencia" />
+          <NavigationProperty Name="UsuarioLinkPassword" Relationship="AudioFilesModel.FK_UsuarioLinkPassword_Usuario" FromRole="Usuario" ToRole="UsuarioLinkPassword" />
+        </EntityType>
+        <Association Name="FK_BitacoraAcceso_Usuario">
+          <End Type="AudioFilesModel.Usuario" Role="Usuario" Multiplicity="0..1" />
+          <End Type="AudioFilesModel.BitacoraAcceso" Role="BitacoraAcceso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BitacoraAcceso">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ListaReproduccion_Usuario">
+          <End Type="AudioFilesModel.Usuario" Role="Usuario" Multiplicity="0..1" />
+          <End Type="AudioFilesModel.ListaReproduccion" Role="ListaReproduccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ListaReproduccion">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sugerencia_Usuario">
+          <End Type="AudioFilesModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="AudioFilesModel.Sugerencia" Role="Sugerencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Sugerencia">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioLinkPassword_Usuario">
+          <End Type="AudioFilesModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="AudioFilesModel.UsuarioLinkPassword" Role="UsuarioLinkPassword" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UsuarioLinkPassword">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AudioFilesModelStoreContainer" CdmEntityContainer="AudioFilesConn">
+          <EntitySetMapping Name="Album">
+            <EntityTypeMapping TypeName="AudioFilesModel.Album">
+              <MappingFragment StoreEntitySet="Album">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdArtista" ColumnName="IdArtista" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Artista">
+            <EntityTypeMapping TypeName="AudioFilesModel.Artista">
+              <MappingFragment StoreEntitySet="Artista">
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdGenero" ColumnName="IdGenero" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BitacoraAcceso">
+            <EntityTypeMapping TypeName="AudioFilesModel.BitacoraAcceso">
+              <MappingFragment StoreEntitySet="BitacoraAcceso">
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cancion">
+            <EntityTypeMapping TypeName="AudioFilesModel.Cancion">
+              <MappingFragment StoreEntitySet="Cancion">
+                <ScalarProperty Name="TieneReporte" ColumnName="TieneReporte" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="ContentType" ColumnName="ContentType" />
+                <ScalarProperty Name="Extension" ColumnName="Extension" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdAlbum" ColumnName="IdAlbum" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Genero">
+            <EntityTypeMapping TypeName="AudioFilesModel.Genero">
+              <MappingFragment StoreEntitySet="Genero">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Incidencia">
+            <EntityTypeMapping TypeName="AudioFilesModel.Incidencia">
+              <MappingFragment StoreEntitySet="Incidencia">
+                <ScalarProperty Name="Revisado" ColumnName="Revisado" />
+                <ScalarProperty Name="FechaIncidencia" ColumnName="FechaIncidencia" />
+                <ScalarProperty Name="NombreCancionSugerido" ColumnName="NombreCancionSugerido" />
+                <ScalarProperty Name="IdAlbumSugerido" ColumnName="IdAlbumSugerido" />
+                <ScalarProperty Name="IdArtistaSugerido" ColumnName="IdArtistaSugerido" />
+                <ScalarProperty Name="IdGeneroSugerido" ColumnName="IdGeneroSugerido" />
+                <ScalarProperty Name="IdCancion" ColumnName="IdCancion" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="IdTipoIncidencia" ColumnName="IdTipoIncidencia" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ParametroCorreo">
+            <EntityTypeMapping TypeName="AudioFilesModel.ParametroCorreo">
+              <MappingFragment StoreEntitySet="ParametroCorreo">
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+                <ScalarProperty Name="Predefinido" ColumnName="Predefinido" />
+                <ScalarProperty Name="Contenido" ColumnName="Contenido" />
+                <ScalarProperty Name="IdTipoCorreo" ColumnName="IdTipoCorreo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sugerencia">
+            <EntityTypeMapping TypeName="AudioFilesModel.Sugerencia">
+              <MappingFragment StoreEntitySet="Sugerencia">
+                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+                <ScalarProperty Name="Cancion" ColumnName="Cancion" />
+                <ScalarProperty Name="Album" ColumnName="Album" />
+                <ScalarProperty Name="Artista" ColumnName="Artista" />
+                <ScalarProperty Name="Genero" ColumnName="Genero" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoCorreo">
+            <EntityTypeMapping TypeName="AudioFilesModel.TipoCorreo">
+              <MappingFragment StoreEntitySet="TipoCorreo">
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoIncidencia">
+            <EntityTypeMapping TypeName="AudioFilesModel.TipoIncidencia">
+              <MappingFragment StoreEntitySet="TipoIncidencia">
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoLink">
+            <EntityTypeMapping TypeName="AudioFilesModel.TipoLink">
+              <MappingFragment StoreEntitySet="TipoLink">
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsuarioLinkPassword">
+            <EntityTypeMapping TypeName="AudioFilesModel.UsuarioLinkPassword">
+              <MappingFragment StoreEntitySet="UsuarioLinkPassword">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="IdTipoLink" ColumnName="IdTipoLink" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Visita">
+            <EntityTypeMapping TypeName="AudioFilesModel.Visita">
+              <MappingFragment StoreEntitySet="Visita">
+                <ScalarProperty Name="Veces" ColumnName="Veces" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ListaReproduccion">
+            <EntityTypeMapping TypeName="AudioFilesModel.ListaReproduccion">
+              <MappingFragment StoreEntitySet="ListaReproduccion">
+                <ScalarProperty Name="Habilitada" ColumnName="Habilitada" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ListaReproduccionDetalle">
+            <EntityTypeMapping TypeName="AudioFilesModel.ListaReproduccionDetalle">
+              <MappingFragment StoreEntitySet="ListaReproduccionDetalle">
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+                <ScalarProperty Name="IdCancion" ColumnName="IdCancion" />
+                <ScalarProperty Name="IdListaReproduccion" ColumnName="IdListaReproduccion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="AudioFilesModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+                <ScalarProperty Name="Confirmado" ColumnName="Confirmado" />
+                <ScalarProperty Name="FechaConfirmacion" ColumnName="FechaConfirmacion" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="PwdDes" ColumnName="PwdDes" />
+                <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram DiagramId="cda8ee8c617b470995569f661d2eb7a5" Name="Diagram1">
+        <EntityTypeShape EntityType="AudioFilesModel.Album" Width="1.5" PointX="5.25" PointY="1.875" />
+        <EntityTypeShape EntityType="AudioFilesModel.Artista" Width="1.5" PointX="3" PointY="1.75" />
+        <EntityTypeShape EntityType="AudioFilesModel.BitacoraAcceso" Width="1.5" PointX="3" PointY="8" />
+        <EntityTypeShape EntityType="AudioFilesModel.Cancion" Width="1.5" PointX="7.5" PointY="1.5" />
+        <EntityTypeShape EntityType="AudioFilesModel.Genero" Width="1.5" PointX="0.75" PointY="2.125" />
+        <EntityTypeShape EntityType="AudioFilesModel.Incidencia" Width="1.5" PointX="9.75" PointY="1" />
+        <EntityTypeShape EntityType="AudioFilesModel.ParametroCorreo" Width="1.5" PointX="11" PointY="8.875" />
+        <EntityTypeShape EntityType="AudioFilesModel.Sugerencia" Width="1.5" PointX="3" PointY="14.25" />
+        <EntityTypeShape EntityType="AudioFilesModel.TipoCorreo" Width="1.5" PointX="8.75" PointY="9.125" />
+        <EntityTypeShape EntityType="AudioFilesModel.TipoIncidencia" Width="1.5" PointX="7.5" PointY="6.125" />
+        <EntityTypeShape EntityType="AudioFilesModel.TipoLink" Width="1.5" PointX="3.75" PointY="10.75" />
+        <EntityTypeShape EntityType="AudioFilesModel.UsuarioLinkPassword" Width="1.5" PointX="6" PointY="9.25" />
+        <EntityTypeShape EntityType="AudioFilesModel.Visita" Width="1.5" PointX="9.75" PointY="5.75" />
+        <AssociationConnector Association="AudioFilesModel.FK_Album_Artista1" />
+        <AssociationConnector Association="AudioFilesModel.FK_Cancion_Album" />
+        <AssociationConnector Association="AudioFilesModel.FK_Incidencia_Album" />
+        <AssociationConnector Association="AudioFilesModel.FK_Artista_Genero" />
+        <AssociationConnector Association="AudioFilesModel.FK_Incidencia_Artista" />
+        <AssociationConnector Association="AudioFilesModel.FK_Incidencia_Cancion" />
+        <AssociationConnector Association="AudioFilesModel.FK_Incidencia_Genero" />
+        <AssociationConnector Association="AudioFilesModel.FK_Incidencia_TipoIncidencia" />
+        <AssociationConnector Association="AudioFilesModel.FK_ParametroCorreo_TipoCorreo" />
+        <AssociationConnector Association="AudioFilesModel.FK_UsuarioLinkPassword_TipoLink" />
+        <EntityTypeShape EntityType="AudioFilesModel.ListaReproduccion" Width="1.5" PointX="3" PointY="17.625" />
+        <EntityTypeShape EntityType="AudioFilesModel.ListaReproduccionDetalle" Width="1.5" PointX="9.75" PointY="12.625" />
+        <AssociationConnector Association="AudioFilesModel.FK_ListaReproduccionDetalle_Cancion" />
+        <AssociationConnector Association="AudioFilesModel.FK_ListaReproduccionDetalle_ListaReproduccion" />
+        <EntityTypeShape EntityType="AudioFilesModel.Usuario" Width="1.5" PointX="0.75" PointY="11.625" />
+        <AssociationConnector Association="AudioFilesModel.FK_BitacoraAcceso_Usuario" />
+        <AssociationConnector Association="AudioFilesModel.FK_ListaReproduccion_Usuario" />
+        <AssociationConnector Association="AudioFilesModel.FK_Sugerencia_Usuario" />
+        <AssociationConnector Association="AudioFilesModel.FK_UsuarioLinkPassword_Usuario" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

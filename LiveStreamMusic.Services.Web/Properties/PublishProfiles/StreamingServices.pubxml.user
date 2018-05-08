@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo es utilizado por el proceso de paquete/publicación de nuestro proyecto Web. Puede personalizar el comportamiento de este proceso
+editando este archivo MSBuild. Para conocer más acerca de esto, visite http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\King Lizard\Desktop\pub\servicios</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/LiveStreamMusic.Business.dll">
+      <publishTime>04/26/2018 13:54:50</publishTime>
+    </File>
+    <File Include="bin/LiveStreamMusic.Business.pdb">
+      <publishTime>04/26/2018 13:54:50</publishTime>
+    </File>
+    <File Include="bin/LiveStreamMusic.Business.Utils.dll">
+      <publishTime>04/26/2018 13:54:47</publishTime>
+    </File>
+    <File Include="bin/LiveStreamMusic.Business.Utils.pdb">
+      <publishTime>04/26/2018 13:54:47</publishTime>
+    </File>
+    <File Include="bin/LiveStreamMusic.Data.dll">
+      <publishTime>04/26/2018 13:54:49</publishTime>
+    </File>
+    <File Include="bin/LiveStreamMusic.Data.pdb">
+      <publishTime>04/26/2018 13:54:49</publishTime>
+    </File>
+    <File Include="bin/LiveStreamMusic.Entities.dll">
+      <publishTime>04/26/2018 13:54:47</publishTime>
+    </File>
+    <File Include="bin/LiveStreamMusic.Entities.pdb">
+      <publishTime>04/26/2018 13:54:47</publishTime>
+    </File>
+    <File Include="bin/LiveStreamMusic.Services.dll">
+      <publishTime>04/26/2018 13:54:51</publishTime>
+    </File>
+    <File Include="bin/LiveStreamMusic.Services.pdb">
+      <publishTime>04/26/2018 13:54:51</publishTime>
+    </File>
+    <File Include="bin/LiveStreamMusic.Services.Web.dll">
+      <publishTime>04/26/2018 13:54:52</publishTime>
+    </File>
+    <File Include="bin/LiveStreamMusic.Services.Web.pdb">
+      <publishTime>04/26/2018 13:54:52</publishTime>
+    </File>
+    <File Include="ServiceMusica.svc">
+      <publishTime>03/30/2018 04:07:32</publishTime>
+    </File>
+    <File Include="ServiceSeguridad.svc">
+      <publishTime>10/16/2017 16:57:40</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>04/26/2018 13:54:53</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

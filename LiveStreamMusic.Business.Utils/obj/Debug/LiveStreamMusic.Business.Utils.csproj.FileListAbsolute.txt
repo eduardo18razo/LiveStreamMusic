@@ -1,0 +1,4 @@
+C:\Users\King Lizard\Documents\LiveStreamMusic\LiveStreamMusic.Business.Utils\bin\Debug\LiveStreamMusic.Business.Utils.dll
+C:\Users\King Lizard\Documents\LiveStreamMusic\LiveStreamMusic.Business.Utils\bin\Debug\LiveStreamMusic.Business.Utils.pdb
+C:\Users\King Lizard\Documents\LiveStreamMusic\LiveStreamMusic.Business.Utils\obj\Debug\LiveStreamMusic.Business.Utils.dll
+C:\Users\King Lizard\Documents\LiveStreamMusic\LiveStreamMusic.Business.Utils\obj\Debug\LiveStreamMusic.Business.Utils.pdb

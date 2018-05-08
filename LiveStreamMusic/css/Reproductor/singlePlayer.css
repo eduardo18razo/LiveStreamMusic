@@ -1,0 +1,100 @@
+﻿.singlePlayer {
+    background: #000000;
+    background: rgba(90,0,90,0.5);
+    -ms-border-radius: 1em;
+    border-radius: 1em;
+    margin: 0 auto;
+    width: 95px;
+    display: inline-block;
+}
+
+.controlsSinglePlayer {
+    background: #000000;
+    background: rgba(0,0,0,0.5);
+    -ms-border-radius: 1em;
+    border-radius: 1em;
+    height: 35px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.singlePlayerControls {
+    display: block;
+    height: 40%;
+    width: 100%;
+}
+
+.singlePlayerControls {
+    display: inline-block;
+    margin: 0 1% 0 15%;
+    height: 35px;
+    width: 125px;
+    vertical-align: middle;
+}
+
+.play {
+    -o-transition: all .1s ease-in-out;
+    -ms-transition: all .1s ease-in-out;
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+    background: url(../../Images/audio/play.png);
+    cursor: pointer;
+    display: inline-block;
+    height: 31px;
+    width: 30px;
+}
+.play:hover {
+    -o-transition: all .1s ease-in-out;
+    -ms-transition: all .1s ease-in-out;
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+    background: url(../../Images/audio/play_on.png);
+    cursor: pointer;
+    display: inline-block;
+    height: 31px;
+    width: 30px;
+}
+
+.pause {
+    -o-transition: all .1s ease-in-out;
+    -ms-transition: all .1s ease-in-out;
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+    background: url(../../Images/audio/pause.png);
+    cursor: pointer;
+    display: inline-block;
+    height: 31px;
+    width: 30px;
+}
+.pause:hover {
+    -o-transition: all .1s ease-in-out;
+    -ms-transition: all .1s ease-in-out;
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+    background: url(../../Images/audio/pause_on.png);
+    cursor: pointer;
+    display: inline-block;
+    height: 31px;
+    width: 30px;
+}
+
+.downloadSong {
+    -o-transition: all .1s ease-in-out;
+    -ms-transition: all .1s ease-in-out;
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+    background: url(../../Images/audio/download.png) no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5px;
+    height: 31px;
+    width: 25px;
+}
+.downloadSong:hover {
+    background: url(../../Images/audio/download_on.png) no-repeat;
+}

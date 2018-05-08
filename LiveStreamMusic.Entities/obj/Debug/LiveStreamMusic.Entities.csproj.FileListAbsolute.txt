@@ -1,0 +1,4 @@
+C:\Users\King Lizard\Documents\LiveStreamMusic\LiveStreamMusic.Entities\bin\Debug\LiveStreamMusic.Entities.dll
+C:\Users\King Lizard\Documents\LiveStreamMusic\LiveStreamMusic.Entities\bin\Debug\LiveStreamMusic.Entities.pdb
+C:\Users\King Lizard\Documents\LiveStreamMusic\LiveStreamMusic.Entities\obj\Debug\LiveStreamMusic.Entities.dll
+C:\Users\King Lizard\Documents\LiveStreamMusic\LiveStreamMusic.Entities\obj\Debug\LiveStreamMusic.Entities.pdb

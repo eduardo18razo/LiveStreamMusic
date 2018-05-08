@@ -1,0 +1,499 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo es utilizado por el proceso de paquete/publicación de nuestro proyecto Web. Puede personalizar el comportamiento de este proceso
+editando este archivo MSBuild. Para conocer más acerca de esto, visite http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Streaming\Web</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/AjaxControlToolkit.dll">
+      <publishTime>03/02/2017 00:29:06</publishTime>
+    </File>
+    <File Include="bin/LiveStreamMusic.Business.dll">
+      <publishTime>05/05/2018 17:11:38</publishTime>
+    </File>
+    <File Include="bin/LiveStreamMusic.Business.pdb">
+      <publishTime>05/05/2018 17:11:38</publishTime>
+    </File>
+    <File Include="bin/LiveStreamMusic.Business.Utils.dll">
+      <publishTime>05/05/2018 17:11:13</publishTime>
+    </File>
+    <File Include="bin/LiveStreamMusic.Business.Utils.pdb">
+      <publishTime>05/05/2018 17:11:12</publishTime>
+    </File>
+    <File Include="bin/LiveStreamMusic.Data.dll">
+      <publishTime>05/05/2018 17:11:27</publishTime>
+    </File>
+    <File Include="bin/LiveStreamMusic.Data.pdb">
+      <publishTime>05/05/2018 17:11:27</publishTime>
+    </File>
+    <File Include="bin/LiveStreamMusic.Entities.dll">
+      <publishTime>05/05/2018 17:11:13</publishTime>
+    </File>
+    <File Include="bin/LiveStreamMusic.Entities.pdb">
+      <publishTime>05/05/2018 17:11:12</publishTime>
+    </File>
+    <File Include="bin/LiveStreamMusic.Web.dll">
+      <publishTime>05/05/2018 17:11:43</publishTime>
+    </File>
+    <File Include="bin/LiveStreamMusic.Web.pdb">
+      <publishTime>05/05/2018 17:11:42</publishTime>
+    </File>
+    <File Include="css/boostrap/bootstrap-theme.css">
+      <publishTime>07/25/2016 15:53:28</publishTime>
+    </File>
+    <File Include="css/boostrap/bootstrap-theme.css.map">
+      <publishTime>07/25/2016 15:53:28</publishTime>
+    </File>
+    <File Include="css/boostrap/bootstrap-theme.min.css">
+      <publishTime>07/25/2016 15:53:28</publishTime>
+    </File>
+    <File Include="css/boostrap/bootstrap-theme.min.css.map">
+      <publishTime>07/25/2016 15:53:28</publishTime>
+    </File>
+    <File Include="css/boostrap/bootstrap.css">
+      <publishTime>03/02/2017 19:56:38</publishTime>
+    </File>
+    <File Include="css/boostrap/bootstrap.css.map">
+      <publishTime>07/25/2016 15:53:28</publishTime>
+    </File>
+    <File Include="css/boostrap/bootstrap.min.css">
+      <publishTime>03/02/2017 12:14:16</publishTime>
+    </File>
+    <File Include="css/boostrap/bootstrap.min.css.map">
+      <publishTime>07/25/2016 15:53:28</publishTime>
+    </File>
+    <File Include="css/CustomStyles.css">
+      <publishTime>03/14/2017 22:15:21</publishTime>
+    </File>
+    <File Include="css/DropDown.css">
+      <publishTime>03/01/2017 21:48:48</publishTime>
+    </File>
+    <File Include="css/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>07/25/2016 13:43:02</publishTime>
+    </File>
+    <File Include="css/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>07/25/2016 13:43:02</publishTime>
+    </File>
+    <File Include="css/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>07/25/2016 13:43:02</publishTime>
+    </File>
+    <File Include="css/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>07/25/2016 13:43:02</publishTime>
+    </File>
+    <File Include="css/fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>07/25/2016 13:43:02</publishTime>
+    </File>
+    <File Include="css/Headers.css">
+      <publishTime>03/01/2017 21:48:48</publishTime>
+    </File>
+    <File Include="css/Main/LERvpM.css">
+      <publishTime>03/07/2017 22:51:45</publishTime>
+    </File>
+    <File Include="css/Reproductor/player.css">
+      <publishTime>03/02/2017 19:14:08</publishTime>
+    </File>
+    <File Include="css/Reproductor/singlePlayer.css">
+      <publishTime>03/01/2017 21:42:41</publishTime>
+    </File>
+    <File Include="css/stylemainmenu.css">
+      <publishTime>03/01/2017 21:48:48</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>03/14/2017 22:39:56</publishTime>
+    </File>
+    <File Include="DefaultMobile.aspx">
+      <publishTime>03/02/2017 11:11:35</publishTime>
+    </File>
+    <File Include="DefaultMusic.aspx">
+      <publishTime>03/15/2017 23:38:45</publishTime>
+    </File>
+    <File Include="FrmRecuperar.aspx">
+      <publishTime>03/01/2017 23:32:01</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>03/02/2017 00:21:57</publishTime>
+    </File>
+    <File Include="Identificar.aspx">
+      <publishTime>11/03/2017 17:25:43</publishTime>
+    </File>
+    <File Include="Images/audio/download.png">
+      <publishTime>02/22/2017 20:32:33</publishTime>
+    </File>
+    <File Include="Images/audio/download_on.png">
+      <publishTime>02/22/2017 20:33:26</publishTime>
+    </File>
+    <File Include="Images/audio/loop.png">
+      <publishTime>02/22/2017 20:32:32</publishTime>
+    </File>
+    <File Include="Images/audio/loop_on.png">
+      <publishTime>02/22/2017 20:33:54</publishTime>
+    </File>
+    <File Include="Images/audio/next.png">
+      <publishTime>02/22/2017 20:32:32</publishTime>
+    </File>
+    <File Include="Images/audio/next_on.png">
+      <publishTime>02/22/2017 20:34:16</publishTime>
+    </File>
+    <File Include="Images/audio/pause.png">
+      <publishTime>02/22/2017 22:01:09</publishTime>
+    </File>
+    <File Include="Images/audio/pause_on.png">
+      <publishTime>02/22/2017 22:00:16</publishTime>
+    </File>
+    <File Include="Images/audio/play.png">
+      <publishTime>02/22/2017 20:32:32</publishTime>
+    </File>
+    <File Include="Images/audio/play_on.png">
+      <publishTime>02/22/2017 20:34:23</publishTime>
+    </File>
+    <File Include="Images/audio/prev.png">
+      <publishTime>02/22/2017 20:32:32</publishTime>
+    </File>
+    <File Include="Images/audio/prev_on.png">
+      <publishTime>02/22/2017 20:34:28</publishTime>
+    </File>
+    <File Include="Images/audio/remove.png">
+      <publishTime>02/22/2017 20:34:47</publishTime>
+    </File>
+    <File Include="Images/audio/shuffle.png">
+      <publishTime>02/22/2017 20:32:33</publishTime>
+    </File>
+    <File Include="Images/audio/shuffle_on.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Images/audio/volume.png">
+      <publishTime>02/22/2017 20:32:32</publishTime>
+    </File>
+    <File Include="Images/audio/volume_on.png">
+      <publishTime>02/22/2017 20:34:09</publishTime>
+    </File>
+    <File Include="Images/background.jpg">
+      <publishTime>02/17/2017 09:31:27</publishTime>
+    </File>
+    <File Include="Images/error.jpg">
+      <publishTime>02/15/2017 11:26:14</publishTime>
+    </File>
+    <File Include="Images/loading.gif">
+      <publishTime>02/17/2017 21:06:06</publishTime>
+    </File>
+    <File Include="Images/logo.jpg">
+      <publishTime>02/17/2017 10:52:46</publishTime>
+    </File>
+    <File Include="Menu/addons/autoheight/jquery.mmenu.autoheight.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/autoheight/jquery.mmenu.autoheight.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/backbutton/jquery.mmenu.backbutton.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/columns/jquery.mmenu.columns.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/columns/jquery.mmenu.columns.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/counters/jquery.mmenu.counters.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/counters/jquery.mmenu.counters.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/dividers/jquery.mmenu.dividers.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/dividers/jquery.mmenu.dividers.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/drag/jquery.mmenu.drag.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/drag/jquery.mmenu.drag.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/dropdown/jquery.mmenu.dropdown.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/dropdown/jquery.mmenu.dropdown.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/fixedelements/jquery.mmenu.fixedelements.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/iconpanels/jquery.mmenu.iconpanels.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/iconpanels/jquery.mmenu.iconpanels.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/keyboardnavigation/jquery.mmenu.keyboardnavigation.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/keyboardnavigation/jquery.mmenu.keyboardnavigation.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/lazysubmenus/jquery.mmenu.lazysubmenus.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/navbars/jquery.mmenu.navbars.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/navbars/jquery.mmenu.navbars.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/offcanvas/jquery.mmenu.offcanvas.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/offcanvas/jquery.mmenu.offcanvas.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/rtl/jquery.mmenu.rtl.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/rtl/jquery.mmenu.rtl.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/screenreader/jquery.mmenu.screenreader.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/screenreader/jquery.mmenu.screenreader.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/scrollbugfix/jquery.mmenu.scrollbugfix.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/searchfield/jquery.mmenu.searchfield.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/searchfield/jquery.mmenu.searchfield.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/sectionindexer/jquery.mmenu.sectionindexer.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/sectionindexer/jquery.mmenu.sectionindexer.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/setselected/jquery.mmenu.setselected.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/setselected/jquery.mmenu.setselected.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/toggles/jquery.mmenu.toggles.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/addons/toggles/jquery.mmenu.toggles.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/css/demo.css">
+      <publishTime>03/15/2017 23:34:13</publishTime>
+    </File>
+    <File Include="Menu/css/jquery.mmenu.all.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/css/jquery.mmenu.css">
+      <publishTime>03/15/2017 23:50:38</publishTime>
+    </File>
+    <File Include="Menu/css/jquery.mmenu.oncanvas.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/extensions/borderstyle/jquery.mmenu.borderstyle.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/extensions/effects/jquery.mmenu.effects.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/extensions/fullscreen/jquery.mmenu.fullscreen.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/extensions/iconbar/jquery.mmenu.iconbar.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/extensions/justifiedlistview/jquery.mmenu.justifiedlistview.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/extensions/multiline/jquery.mmenu.multiline.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/extensions/pagedim/jquery.mmenu.pagedim.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/extensions/popup/jquery.mmenu.popup.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/extensions/positioning/jquery.mmenu.positioning.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/extensions/shadows/jquery.mmenu.shadows.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/extensions/themes/jquery.mmenu.themes.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/extensions/tileview/jquery.mmenu.tileview.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/extensions/widescreen/jquery.mmenu.widescreen.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/js/jquery.mmenu.all.min.js">
+      <publishTime>03/16/2017 01:14:17</publishTime>
+    </File>
+    <File Include="Menu/js/jquery.mmenu.all.min.umd.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/js/jquery.mmenu.min.js">
+      <publishTime>03/15/2017 23:50:38</publishTime>
+    </File>
+    <File Include="Menu/js/jquery.mmenu.min.umd.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/js/jquery.mmenu.oncanvas.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/wrappers/angular/jquery.mmenu.angular.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/wrappers/bootstrap/jquery.mmenu.bootstrap.css">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/wrappers/bootstrap/jquery.mmenu.bootstrap.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/wrappers/jquerymobile/jquery.mmenu.jquerymobile.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/wrappers/magento/jquery.mmenu.magento.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/wrappers/olark/jquery.mmenu.olark.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/wrappers/turbolinks/jquery.mmenu.turbolinks.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="Menu/wrappers/wordpress/jquery.mmenu.wordpress.min.js">
+      <publishTime>11/13/2016 01:41:02</publishTime>
+    </File>
+    <File Include="musicMaster.Master">
+      <publishTime>03/16/2017 01:27:14</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>03/02/2017 00:29:06</publishTime>
+    </File>
+    <File Include="Publico.Master">
+      <publishTime>03/02/2017 22:12:52</publishTime>
+    </File>
+    <File Include="scripts/Boostrap/js/bootstrap.js">
+      <publishTime>07/25/2016 15:53:28</publishTime>
+    </File>
+    <File Include="scripts/Boostrap/js/bootstrap.min.js">
+      <publishTime>07/25/2016 15:53:30</publishTime>
+    </File>
+    <File Include="scripts/Boostrap/js/npm.js">
+      <publishTime>07/25/2016 15:53:30</publishTime>
+    </File>
+    <File Include="scripts/JQuery/jquery-2.1.1.min.js">
+      <publishTime>03/01/2017 19:44:41</publishTime>
+    </File>
+    <File Include="scripts/JQuery/jquery-3.1.1.min.js">
+      <publishTime>03/01/2017 22:51:48</publishTime>
+    </File>
+    <File Include="scripts/Reproductor/jquery.tools.min.js">
+      <publishTime>03/01/2017 21:01:46</publishTime>
+    </File>
+    <File Include="scripts/Reproductor/player.js">
+      <publishTime>03/02/2017 14:40:06</publishTime>
+    </File>
+    <File Include="scripts/Reproductor/singlePlayer.js">
+      <publishTime>03/02/2017 13:09:19</publishTime>
+    </File>
+    <File Include="scripts/super-panel.js">
+      <publishTime>03/01/2017 21:49:21</publishTime>
+    </File>
+    <File Include="Site.Master">
+      <publishTime>05/05/2018 17:15:49</publishTime>
+    </File>
+    <File Include="Site.Mobile.Master">
+      <publishTime>03/02/2017 11:30:51</publishTime>
+    </File>
+    <File Include="UserControls/Altas/UcAdmonListas.ascx">
+      <publishTime>03/02/2017 13:27:38</publishTime>
+    </File>
+    <File Include="UserControls/Altas/UcAgregarCancionLista.ascx">
+      <publishTime>03/15/2017 09:57:51</publishTime>
+    </File>
+    <File Include="UserControls/Altas/UcAltaAlbum.ascx">
+      <publishTime>03/01/2017 19:09:07</publishTime>
+    </File>
+    <File Include="UserControls/Altas/UcAltaArtista.ascx">
+      <publishTime>03/01/2017 19:09:07</publishTime>
+    </File>
+    <File Include="UserControls/Altas/UcAltaCuenta.ascx">
+      <publishTime>03/02/2017 12:07:35</publishTime>
+    </File>
+    <File Include="UserControls/Altas/UcAltaGenero.ascx">
+      <publishTime>03/01/2017 19:09:07</publishTime>
+    </File>
+    <File Include="UserControls/Altas/UcAltaIncidencia.ascx">
+      <publishTime>03/01/2017 19:09:07</publishTime>
+    </File>
+    <File Include="UserControls/Altas/UcAltaListaReproduccion.ascx">
+      <publishTime>03/02/2017 13:53:08</publishTime>
+    </File>
+    <File Include="UserControls/Altas/UcAltaSolicitudCancion.ascx">
+      <publishTime>03/01/2017 19:09:07</publishTime>
+    </File>
+    <File Include="UserControls/Reproductor/UcPlayer.ascx">
+      <publishTime>03/14/2017 22:09:47</publishTime>
+    </File>
+    <File Include="UserControls/Reproductor/UcSinglePlayer.ascx">
+      <publishTime>03/01/2017 19:09:07</publishTime>
+    </File>
+    <File Include="UserControls/UcLogin.ascx">
+      <publishTime>03/01/2017 19:36:31</publishTime>
+    </File>
+    <File Include="Users/AdministrarListas.aspx">
+      <publishTime>03/01/2017 20:37:40</publishTime>
+    </File>
+    <File Include="Users/Dashboard.aspx">
+      <publishTime>03/01/2017 20:37:40</publishTime>
+    </File>
+    <File Include="Users/FileCS.ashx">
+      <publishTime>03/01/2017 20:37:40</publishTime>
+    </File>
+    <File Include="Users/ManejListas.aspx">
+      <publishTime>01/03/2017 20:37:40</publishTime>
+    </File>
+    <File Include="Users/Mobile/Musica.aspx">
+      <publishTime>03/02/2017 11:07:18</publishTime>
+    </File>
+    <File Include="Users/Mobile/SolicitarRola.aspx">
+      <publishTime>03/02/2017 10:55:46</publishTime>
+    </File>
+    <File Include="Users/Musica.aspx">
+      <publishTime>11/03/2017 17:32:25</publishTime>
+    </File>
+    <File Include="Users/ReproductorAnidado.aspx">
+      <publishTime>03/01/2017 20:37:40</publishTime>
+    </File>
+    <File Include="Users/SolicitarRola.aspx">
+      <publishTime>03/01/2017 20:37:40</publishTime>
+    </File>
+    <File Include="Users/WebMethods.aspx">
+      <publishTime>03/01/2017 20:37:40</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>03/02/2017 00:34:01</publishTime>
+    </File>
+    <File Include="WebSite.Master">
+      <publishTime>05/05/2018 17:21:34</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

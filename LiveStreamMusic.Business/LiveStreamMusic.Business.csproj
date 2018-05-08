@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{182DE324-46FB-4F44-B199-51FBBF5DB5BF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LiveStreamMusic.Business</RootNamespace>
+    <AssemblyName>LiveStreamMusic.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessSeguridad.cs" />
+    <Compile Include="CancionesHelper.cs" />
+    <Compile Include="Catalogos\BusinessAlbum.cs" />
+    <Compile Include="Catalogos\BusinessArtista.cs" />
+    <Compile Include="Catalogos\BusinessCancion.cs" />
+    <Compile Include="Catalogos\BusinessGeneros.cs" />
+    <Compile Include="Catalogos\BusinessTipoIncidencia.cs" />
+    <Compile Include="Operacion\BusinessIncidencia.cs" />
+    <Compile Include="Operacion\BusinessListaReproduccion.cs" />
+    <Compile Include="Operacion\BusinessUsuarios.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LiveStreamMusic.Business.Utils\LiveStreamMusic.Business.Utils.csproj">
+      <Project>{7f27a109-d2c5-4a5d-a999-65d90c6932b1}</Project>
+      <Name>LiveStreamMusic.Business.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LiveStreamMusic.Data\LiveStreamMusic.Data.csproj">
+      <Project>{d3fe536b-f7cd-4d95-aecf-b47b2d6a192f}</Project>
+      <Name>LiveStreamMusic.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LiveStreamMusic.Entities\LiveStreamMusic.Entities.csproj">
+      <Project>{65792f9f-e132-4970-93fa-bd915e89bc96}</Project>
+      <Name>LiveStreamMusic.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

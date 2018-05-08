@@ -1,0 +1,133 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="LiveStreamMusic.Web.SiteMaster" %>
+
+<%@ Register Src="~/UserControls/Reproductor/UcPlayer.ascx" TagPrefix="uc1" TagName="UcPlayer" %>
+
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RazoFy - Mi aplicación ASP.NET</title>
+    
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel='stylesheet' href="assets/css/font.css" />
+    <link rel="stylesheet" href="assets/css/font-awesome.css" />
+    <link rel="stylesheet" href="assets/css/pe-7-icons.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <%--<link rel="stylesheet" href="assets/css/bootstrap-markdown.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/medias.css" />
+    <link rel="stylesheet" href="assets/css/menuStyle.css" />
+    <link rel="stylesheet" href="assets/css/divs.css" />
+    <link rel="stylesheet" href="assets/css/checkBox.css" />
+    <link rel="stylesheet" href="assets/css/fileupload.css" />--%>
+    <link href="css/CustomStyles.css" rel="stylesheet" />
+    <link href="css/Headers.css" rel="stylesheet" />
+    <link href="css/stylemainmenu.css" rel="stylesheet" />
+    <link href="css/DropDown.css" rel="stylesheet" />
+    
+
+    <link href="css/Reproductor/singlePlayer.css" rel="stylesheet" />
+    <link href="css/Reproductor/player.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder runat="server" ID="headMain"></asp:ContentPlaceHolder>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3357287616077195",
+            enable_page_level_ads: true
+        });
+    </script>
+</head>
+<body style="background: url('/../Images/background.jpg') repeat-y; -ms-background-size: cover; background-size: cover; background-attachment: fixed">
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                
+                <asp:ScriptReference Path="~/scripts/JQuery/jquery-2.1.1.min.js" />
+                <asp:ScriptReference Path="~/scripts/Boostrap/js/bootstrap.min.js" />
+                <asp:ScriptReference Path="~/assets/js/bootstrap-notify.js" />
+                <asp:ScriptReference Path="~/assets/js/bootstrap-notify.min.js" />
+                <asp:ScriptReference Path="~/assets/js/Notificaciones.js" />
+                
+                <asp:ScriptReference Path="~/scripts/Reproductor/singlePlayer.js" />
+                <asp:ScriptReference Path="~/scripts/Reproductor/player.js" />
+            </Scripts>
+        </asp:ScriptManager>
+
+
+        <asp:UpdateProgress ID="updateProgress" runat="server">
+            <ProgressTemplate>
+                <div style="position: fixed; text-align: center; height: 100%; width: 100%; top: 0; right: 0; left: 0; z-index: 9999999; background-color: #000000; -ms-opacity: 1.0; opacity: 1.0;">
+                    <asp:Image ID="imgUpdateProgress" runat="server" ImageUrl="~/Images/loading.gif" AlternateText="Loading ..." ToolTip="Loading ..." Style="padding: 10px; position: fixed; top: 25%; left: 35%; border: 10px; width: 50%" />
+                </div>
+            </ProgressTemplate>
+        </asp:UpdateProgress>
+
+        <header id="panelAlert" runat="server" visible="False">
+            <div class="alert alert-danger">
+                <asp:Repeater runat="server" ID="rptHeaderError">
+                    <ItemTemplate>
+                        <%# Container.DataItem %>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
+        </header>
+
+        <div id="headerNav navbar navbar-inverse navbar-fixed-top" style="vertical-align: central">
+            <div class="navbar navbar-inverse navbar-fixed-top" style="height: 70px; z-index: 9999; background: #000000">
+                <div class="logo" id="logo">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="navbar-collapse collapse" style="margin-right: 5px">
+                            <div id="headerNavInfoDiv">
+                                <div style="float: left; width: 300px; z-index: 99999">
+                                    <div>
+                                        <asp:Label runat="server" ID="lblUsuario" Style="font-size: x-small; color: white" />
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <uc1:UcPlayer runat="server" ID="UcPlayer" />
+                                </li>
+                            </ul>
+                            <div class="navbar-form navbar-right">
+                                <asp:Button runat="server" CssClass="btn btn-sm btn-success" ID="Button1" Text="Cerrar Sesion" OnClick="btnsOut_OnClick" Style="margin-left: 10px; margin-right: 10px" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <asp:ContentPlaceHolder runat="server" ID="PlayerContent" Visible="False"></asp:ContentPlaceHolder>
+        <div class="frameStyle">
+            <asp:UpdatePanel runat="server" UpdateMode="Conditional" style="width: 100%; height: 100%;">
+                <ContentTemplate>
+                    <iframe style="width: 100%; height: 100%; border: 0 solid; background: transparent !important" src="Musica.aspx"></iframe>
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <hr />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+    </form>
+    <footer class="navbar navbar-inverse navbar-fixed-bottom" style="height: 8%; text-align: center">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="87S8MFGGT9FJ2">
+            <input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
+            <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+        </form>
+    </footer>
+</body>
+</html>
+

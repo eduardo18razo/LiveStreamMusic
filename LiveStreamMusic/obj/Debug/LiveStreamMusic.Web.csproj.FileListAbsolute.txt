@@ -1,0 +1,31 @@
+C:\Users\King Lizard\Documents\Visual Studio 2013\Projects\LiveStreamMusic\LiveStreamMusic\bin\LiveStreamMusic.Web.dll.config
+C:\Users\King Lizard\Documents\Visual Studio 2013\Projects\LiveStreamMusic\LiveStreamMusic\bin\LiveStreamMusic.Web.dll
+C:\Users\King Lizard\Documents\Visual Studio 2013\Projects\LiveStreamMusic\LiveStreamMusic\bin\LiveStreamMusic.Web.pdb
+C:\Users\King Lizard\Documents\Visual Studio 2013\Projects\LiveStreamMusic\LiveStreamMusic\bin\AjaxControlToolkit.dll
+C:\Users\King Lizard\Documents\Visual Studio 2013\Projects\LiveStreamMusic\LiveStreamMusic\bin\LiveStreamMusic.Business.dll
+C:\Users\King Lizard\Documents\Visual Studio 2013\Projects\LiveStreamMusic\LiveStreamMusic\bin\LiveStreamMusic.Business.Utils.dll
+C:\Users\King Lizard\Documents\Visual Studio 2013\Projects\LiveStreamMusic\LiveStreamMusic\bin\LiveStreamMusic.Entities.dll
+C:\Users\King Lizard\Documents\Visual Studio 2013\Projects\LiveStreamMusic\LiveStreamMusic\bin\MSCaptcha.dll
+C:\Users\King Lizard\Documents\Visual Studio 2013\Projects\LiveStreamMusic\LiveStreamMusic\bin\LiveStreamMusic.Data.dll
+C:\Users\King Lizard\Documents\Visual Studio 2013\Projects\LiveStreamMusic\LiveStreamMusic\bin\LiveStreamMusic.Business.Utils.pdb
+C:\Users\King Lizard\Documents\Visual Studio 2013\Projects\LiveStreamMusic\LiveStreamMusic\bin\LiveStreamMusic.Business.pdb
+C:\Users\King Lizard\Documents\Visual Studio 2013\Projects\LiveStreamMusic\LiveStreamMusic\bin\LiveStreamMusic.Entities.pdb
+C:\Users\King Lizard\Documents\Visual Studio 2013\Projects\LiveStreamMusic\LiveStreamMusic\bin\LiveStreamMusic.Data.pdb
+C:\Users\King Lizard\Documents\Visual Studio 2013\Projects\LiveStreamMusic\LiveStreamMusic\obj\Debug\LiveStreamMusic.Web.csprojResolveAssemblyReference.cache
+C:\Users\King Lizard\Documents\Visual Studio 2013\Projects\LiveStreamMusic\LiveStreamMusic\obj\Debug\LiveStreamMusic.Web.dll
+C:\Users\King Lizard\Documents\Visual Studio 2013\Projects\LiveStreamMusic\LiveStreamMusic\obj\Debug\LiveStreamMusic.Web.pdb
+C:\Users\Eduardo Cerritos\Desktop\Eduardo\Projects\LiveStreamMusic\LiveStreamMusic\obj\Debug\LiveStreamMusic.Web.csprojResolveAssemblyReference.cache
+C:\Users\Eduardo Cerritos\Desktop\Eduardo\Projects\LiveStreamMusic\LiveStreamMusic\obj\Debug\LiveStreamMusic.Web.dll
+C:\Users\Eduardo Cerritos\Desktop\Eduardo\Projects\LiveStreamMusic\LiveStreamMusic\obj\Debug\LiveStreamMusic.Web.pdb
+C:\Users\Eduardo Cerritos\Desktop\Eduardo\Projects\LiveStreamMusic\LiveStreamMusic\bin\LiveStreamMusic.Web.dll.config
+C:\Users\Eduardo Cerritos\Desktop\Eduardo\Projects\LiveStreamMusic\LiveStreamMusic\bin\LiveStreamMusic.Web.dll
+C:\Users\Eduardo Cerritos\Desktop\Eduardo\Projects\LiveStreamMusic\LiveStreamMusic\bin\LiveStreamMusic.Web.pdb
+C:\Users\Eduardo Cerritos\Desktop\Eduardo\Projects\LiveStreamMusic\LiveStreamMusic\bin\AjaxControlToolkit.dll
+C:\Users\Eduardo Cerritos\Desktop\Eduardo\Projects\LiveStreamMusic\LiveStreamMusic\bin\LiveStreamMusic.Business.dll
+C:\Users\Eduardo Cerritos\Desktop\Eduardo\Projects\LiveStreamMusic\LiveStreamMusic\bin\LiveStreamMusic.Business.Utils.dll
+C:\Users\Eduardo Cerritos\Desktop\Eduardo\Projects\LiveStreamMusic\LiveStreamMusic\bin\LiveStreamMusic.Entities.dll
+C:\Users\Eduardo Cerritos\Desktop\Eduardo\Projects\LiveStreamMusic\LiveStreamMusic\bin\LiveStreamMusic.Data.dll
+C:\Users\Eduardo Cerritos\Desktop\Eduardo\Projects\LiveStreamMusic\LiveStreamMusic\bin\LiveStreamMusic.Business.Utils.pdb
+C:\Users\Eduardo Cerritos\Desktop\Eduardo\Projects\LiveStreamMusic\LiveStreamMusic\bin\LiveStreamMusic.Business.pdb
+C:\Users\Eduardo Cerritos\Desktop\Eduardo\Projects\LiveStreamMusic\LiveStreamMusic\bin\LiveStreamMusic.Entities.pdb
+C:\Users\Eduardo Cerritos\Desktop\Eduardo\Projects\LiveStreamMusic\LiveStreamMusic\bin\LiveStreamMusic.Data.pdb

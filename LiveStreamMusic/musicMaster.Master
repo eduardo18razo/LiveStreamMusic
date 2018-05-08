@@ -1,0 +1,103 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="musicMaster.master.cs" Inherits="LiveStreamMusic.Web.musicMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="Menu/css/demo.css" rel="stylesheet" />
+    <link href="Menu/css/jquery.mmenu.all.css" rel="stylesheet" />
+    <link href="Menu/extensions/effects/jquery.mmenu.effects.css" rel="stylesheet" />
+    <link href="Menu/extensions/shadows/jquery.mmenu.shadows.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.0.js"></script>
+    <script src="Menu/js/jquery.mmenu.all.min.js"></script>
+    <script type="text/javascript">
+        function LoadMenu() {
+            debugger;
+            $(function () {
+                debugger;
+                $('#menu').mmenu({
+                    extensions: ['effect-slide-menu', 'shadow-page', 'shadow-panels'],
+                    keyboardNavigation: true,
+                    screenReader: true,
+                    counters: true,
+                    navbar: {
+                        title: 'Advanced menu'
+                    },
+                    navbars: [
+                        {
+                            position: 'top',
+                            content: ['searchfield']
+                        }, {
+                            position: 'top',
+                            content: [
+                                'prev',
+                                'title'
+                            ]
+                        }, {
+                            position: 'bottom',
+                            content: [
+                                '<a href="http://mmenu.frebsite.nl/wordpress-plugin.html" target="_blank">WordPress plugin</a>'
+                            ]
+                        }
+                    ]
+                });
+                var API = $('#menu').data('mmenu');
+                $('#btnOpenclose').click(function () {
+                    API.open();
+                });
+
+            });
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form runat="server" enctype="multipart/form-data">
+        <asp:ScriptManager runat="server" EnablePageMethods="true">
+            <Scripts>
+                <asp:ScriptReference Path="~/scripts/JQuery/jquery-2.1.1.min.js" />
+                <asp:ScriptReference Path="~/Menu/js/jquery.mmenu.all.min.js" />
+            </Scripts>
+        </asp:ScriptManager>
+        <div id="page">
+            <div class="header">
+
+                <input type="button" id="btnOpenclose" runat="server"><span></span></input>
+                Demo
+                   
+            </div>
+            <div class="content">
+                <p>
+                    <strong>This is an advanced demo.</strong><br />
+                    Click the menu icon to open the menu.
+                </p>
+                <asp:ContentPlaceHolder runat="server" ID="ContentPlaceHolder1"></asp:ContentPlaceHolder>
+            </div>
+            <nav id="menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><span>About us</span>
+                        <ul>
+                            <li><a href="#about/history">History</a></li>
+                            <li><span>The team</span>
+                                <ul>
+                                    <li><a href="#about/team/management">Management</a></li>
+                                    <li><a href="#about/team/sales">Sales</a></li>
+                                    <li><a href="#about/team/development">Development</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#about/address">Our address</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </form>
+</body>
+</html>
